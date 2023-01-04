@@ -7,7 +7,7 @@ const debug = require('debug')('nodestr:server');
 const express = require('express'); //tudo que colocar entre aspas  simples sem um caminho ele vai buscar na pasta nodemodules
 
 const app = express();
-const port = 3000;
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 const server = http.createServer(app);
@@ -24,7 +24,7 @@ app.use('/', route);
 server.listen(port);
 console.log('API rodando na porta ' + port);
 
-function normalizePort(val) {
+function normalizePort(val) { //normalizando a porta paara acessar a aplicação
     const port = parseInt(val, 10);
 
     if (isNaN(port)) {
