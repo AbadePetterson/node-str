@@ -1,5 +1,5 @@
 //sempre que for importar bibliotecas no node precisa usar o require
-const app = require('../src/app.js');
+const app = require('../src/app');
 const http = require('http');
 const debug = require('debug')('nodestr:server');
 
